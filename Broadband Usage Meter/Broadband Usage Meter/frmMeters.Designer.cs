@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.lblPeakTitle = new System.Windows.Forms.Label();
-            this.pgbPeak = new System.Windows.Forms.ProgressBar();
             this.lblPeakPercentage = new System.Windows.Forms.Label();
             this.lblPeakRemainingData = new System.Windows.Forms.Label();
-            this.lblTotalRemaining = new System.Windows.Forms.Label();
+            this.lblTotalRemainingData = new System.Windows.Forms.Label();
             this.lblTotalPercentage = new System.Windows.Forms.Label();
-            this.pgbTotal = new System.Windows.Forms.ProgressBar();
             this.lblTotalTitle = new System.Windows.Forms.Label();
+            this.pgbTotal = new Broadband_Usage_Meter.BIProgressBar();
+            this.pgbPeak = new Broadband_Usage_Meter.BIProgressBar();
             this.SuspendLayout();
             // 
             // lblPeakTitle
@@ -47,14 +47,6 @@
             this.lblPeakTitle.Size = new System.Drawing.Size(40, 16);
             this.lblPeakTitle.TabIndex = 0;
             this.lblPeakTitle.Text = "Peak";
-            // 
-            // pgbPeak
-            // 
-            this.pgbPeak.Location = new System.Drawing.Point(58, 24);
-            this.pgbPeak.Name = "pgbPeak";
-            this.pgbPeak.Size = new System.Drawing.Size(207, 23);
-            this.pgbPeak.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgbPeak.TabIndex = 1;
             // 
             // lblPeakPercentage
             // 
@@ -76,15 +68,15 @@
             this.lblPeakRemainingData.Text = "100 GB Left";
             this.lblPeakRemainingData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblTotalRemaining
+            // lblTotalRemainingData
             // 
-            this.lblTotalRemaining.AutoSize = true;
-            this.lblTotalRemaining.Location = new System.Drawing.Point(201, 62);
-            this.lblTotalRemaining.Name = "lblTotalRemaining";
-            this.lblTotalRemaining.Size = new System.Drawing.Size(64, 13);
-            this.lblTotalRemaining.TabIndex = 7;
-            this.lblTotalRemaining.Text = "100 GB Left";
-            this.lblTotalRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalRemainingData.AutoSize = true;
+            this.lblTotalRemainingData.Location = new System.Drawing.Point(201, 62);
+            this.lblTotalRemainingData.Name = "lblTotalRemainingData";
+            this.lblTotalRemainingData.Size = new System.Drawing.Size(64, 13);
+            this.lblTotalRemainingData.TabIndex = 7;
+            this.lblTotalRemainingData.Text = "100 GB Left";
+            this.lblTotalRemainingData.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalPercentage
             // 
@@ -96,14 +88,6 @@
             this.lblTotalPercentage.TabIndex = 6;
             this.lblTotalPercentage.Text = "100%";
             // 
-            // pgbTotal
-            // 
-            this.pgbTotal.Location = new System.Drawing.Point(58, 78);
-            this.pgbTotal.Name = "pgbTotal";
-            this.pgbTotal.Size = new System.Drawing.Size(207, 23);
-            this.pgbTotal.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pgbTotal.TabIndex = 5;
-            // 
             // lblTotalTitle
             // 
             this.lblTotalTitle.AutoSize = true;
@@ -114,19 +98,33 @@
             this.lblTotalTitle.TabIndex = 4;
             this.lblTotalTitle.Text = "Total";
             // 
+            // pgbTotal
+            // 
+            this.pgbTotal.Location = new System.Drawing.Point(58, 78);
+            this.pgbTotal.Name = "pgbTotal";
+            this.pgbTotal.Size = new System.Drawing.Size(207, 23);
+            this.pgbTotal.TabIndex = 9;
+            // 
+            // pgbPeak
+            // 
+            this.pgbPeak.Location = new System.Drawing.Point(58, 24);
+            this.pgbPeak.Name = "pgbPeak";
+            this.pgbPeak.Size = new System.Drawing.Size(207, 23);
+            this.pgbPeak.TabIndex = 8;
+            // 
             // frmMeters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(321, 113);
             this.ControlBox = false;
-            this.Controls.Add(this.lblTotalRemaining);
-            this.Controls.Add(this.lblTotalPercentage);
             this.Controls.Add(this.pgbTotal);
+            this.Controls.Add(this.pgbPeak);
+            this.Controls.Add(this.lblTotalRemainingData);
+            this.Controls.Add(this.lblTotalPercentage);
             this.Controls.Add(this.lblTotalTitle);
             this.Controls.Add(this.lblPeakRemainingData);
             this.Controls.Add(this.lblPeakPercentage);
-            this.Controls.Add(this.pgbPeak);
             this.Controls.Add(this.lblPeakTitle);
             this.MaximizeBox = false;
             this.Name = "frmMeters";
@@ -139,13 +137,13 @@
         #endregion
 
         private System.Windows.Forms.Label lblPeakTitle;
-        private System.Windows.Forms.ProgressBar pgbPeak;
         private System.Windows.Forms.Label lblPeakPercentage;
         private System.Windows.Forms.Label lblPeakRemainingData;
-        private System.Windows.Forms.Label lblTotalRemaining;
+        private System.Windows.Forms.Label lblTotalRemainingData;
         private System.Windows.Forms.Label lblTotalPercentage;
-        private System.Windows.Forms.ProgressBar pgbTotal;
         private System.Windows.Forms.Label lblTotalTitle;
+        private BIProgressBar pgbPeak;
+        private BIProgressBar pgbTotal;
     }
 }
 
