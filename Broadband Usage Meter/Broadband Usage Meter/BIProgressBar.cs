@@ -12,18 +12,13 @@ namespace Broadband_Usage_Meter
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = false)]
         static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
-        /*
-            1 - Green
-            2 - Red
-            3 - Yellow
-        */
+        /* 1 - Green, 2 - Red, 3 - Yellow */
 
         public new int Value
         {
             set
             {
                 base.Value = value;
-
 
                 if (value > 30)
                 {

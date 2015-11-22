@@ -28,14 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeters));
             this.lblPeakTitle = new System.Windows.Forms.Label();
             this.lblPeakPercentage = new System.Windows.Forms.Label();
             this.lblPeakRemainingData = new System.Windows.Forms.Label();
             this.lblTotalRemainingData = new System.Windows.Forms.Label();
             this.lblTotalPercentage = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.mainMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pgbTotal = new Broadband_Usage_Meter.BIProgressBar();
             this.pgbPeak = new Broadband_Usage_Meter.BIProgressBar();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPeakTitle
@@ -98,6 +106,41 @@
             this.lblTotalTitle.TabIndex = 4;
             this.lblTotalTitle.Text = "Total";
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.mainMenu;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Broadband Usage Meter";
+            this.notifyIcon.Visible = true;
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Size = new System.Drawing.Size(153, 76);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // pgbTotal
             // 
             this.pgbTotal.Location = new System.Drawing.Point(58, 78);
@@ -129,6 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMeters";
             this.Load += new System.EventHandler(this.frmMeters_Load);
+            this.mainMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +188,11 @@
         private System.Windows.Forms.Label lblTotalTitle;
         private BIProgressBar pgbPeak;
         private BIProgressBar pgbTotal;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip mainMenu;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 

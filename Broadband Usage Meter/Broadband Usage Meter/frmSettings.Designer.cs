@@ -1,6 +1,6 @@
 ﻿namespace Broadband_Usage_Meter
 {
-    partial class frmPreferences
+    partial class frmSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -94,7 +94,7 @@
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             // 
-            // frmPreferences
+            // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,9 +105,11 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserID);
             this.Controls.Add(this.lblInstructions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmPreferences";
+            this.Name = "frmSettings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Broadband Usage Meter";
             this.ResumeLayout(false);
             this.PerformLayout();

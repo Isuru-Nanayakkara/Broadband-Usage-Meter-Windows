@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Broadband_Usage_Meter
 {
-    public partial class frmPreferences : Form
+    public partial class frmSettings : Form
     {
-        public frmPreferences()
+        public frmSettings()
         {
             InitializeComponent();
         }

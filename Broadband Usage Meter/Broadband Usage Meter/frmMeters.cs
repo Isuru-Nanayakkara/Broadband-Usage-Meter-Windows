@@ -40,12 +40,6 @@ namespace Broadband_Usage_Meter
             await api.login("HC2185334", "Netass1st");
 
             Usage usage = await api.fetchUsage();
-            Console.WriteLine(usage.downlink);
-            Console.WriteLine(usage.uplink);
-            Console.WriteLine(usage.totalfup);
-            Console.WriteLine(usage.totalrem);
-            Console.WriteLine(usage.peakfup);
-            Console.WriteLine(usage.peakrem);
 
             lblTotalPercentage.Text = usage.RemainingTotalDataPercentage.ToString() + "%";
             pgbTotal.Value = usage.RemainingTotalDataPercentage;
@@ -54,6 +48,17 @@ namespace Broadband_Usage_Meter
             lblPeakPercentage.Text = usage.RemainingPeakDataPercentage.ToString() + "%";
             pgbPeak.Value = usage.RemainingPeakDataPercentage;
             lblPeakRemainingData.Text = usage.RemainingPeakData.ToString() + " GB Left";
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSettings frmSettings = new frmSettings();
+            frmSettings.Show();
         }
     }
 }

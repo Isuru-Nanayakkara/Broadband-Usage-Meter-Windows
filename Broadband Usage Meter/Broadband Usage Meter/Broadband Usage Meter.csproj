@@ -56,11 +56,11 @@
     <Compile Include="frmMeters.Designer.cs">
       <DependentUpon>frmMeters.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPreferences.cs">
+    <Compile Include="frmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPreferences.Designer.cs">
-      <DependentUpon>frmPreferences.cs</DependentUpon>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,8 +69,8 @@
     <EmbeddedResource Include="frmMeters.resx">
       <DependentUpon>frmMeters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPreferences.resx">
-      <DependentUpon>frmPreferences.cs</DependentUpon>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
