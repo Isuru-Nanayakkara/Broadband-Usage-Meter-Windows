@@ -1,6 +1,6 @@
 ﻿namespace Broadband_Usage_Meter
 {
-    partial class frmMeters
+    partial class FromMeters
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMeters));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FromMeters));
             this.lblPeakTitle = new System.Windows.Forms.Label();
             this.lblPeakPercentage = new System.Windows.Forms.Label();
             this.lblPeakRemainingData = new System.Windows.Forms.Label();

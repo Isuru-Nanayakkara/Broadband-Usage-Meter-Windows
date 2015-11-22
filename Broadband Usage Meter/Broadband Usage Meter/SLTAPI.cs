@@ -21,7 +21,7 @@ namespace Broadband_Usage_Meter
             client.BaseAddress = new Uri(baseURL);
         }
 
-        public async Task login(string userID, string password)
+        public async Task<bool> login(string userID, string password)
         {
             var parameters = new Dictionary<string, string>
                 {
@@ -33,7 +33,7 @@ namespace Broadband_Usage_Meter
             var response = await client.PostAsync("login/j_security_check/j_security_check", encodedParameters);
             response.EnsureSuccessStatusCode();
             string responseString = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine(responseString);
+            return !responseString.Contains("Invalid Credentials");
         }
 
         public async Task<Usage> fetchUsage()
@@ -42,9 +42,6 @@ namespace Broadband_Usage_Meter
             response.EnsureSuccessStatusCode();
             Stream responseStream = await response.Content.ReadAsStreamAsync();
             responseStream.Position = 0;
-
-            //MemoryStream stream = new MemoryStream();
-            //stream.Position = 0;
 
             StreamReader reader = new StreamReader(responseStream);
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Usage));

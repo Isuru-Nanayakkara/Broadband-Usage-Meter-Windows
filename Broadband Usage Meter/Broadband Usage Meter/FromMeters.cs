@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Broadband_Usage_Meter
 {
-    public partial class frmMeters : Form
+    public partial class FromMeters : Form
     {
         private const int WM_NCHITTEST = 0x84;
         private const int HTCLIENT = 0x1;
@@ -26,7 +26,7 @@ namespace Broadband_Usage_Meter
             base.WndProc(ref m);
         }
 
-        public frmMeters()
+        public FromMeters()
         {
             InitializeComponent();
         }
@@ -37,7 +37,16 @@ namespace Broadband_Usage_Meter
             this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width - this.Width, Screen.PrimaryScreen.WorkingArea.Height - this.Height);
 
             SLTAPI api = new SLTAPI();
-            await api.login("HC2185334", "Netass1st");
+
+            string userID = Properties.Settings.Default.userID;
+            string password = Properties.Settings.Default.password;
+            bool isLoggedIn = await api.login(userID, password);
+            if (!isLoggedIn)
+            {
+                MessageBox.Show("Please enter the correct portal Username and Password", "Invalid Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showSettingsWindow();
+                return;
+            }
 
             Usage usage = await api.fetchUsage();
 
@@ -57,7 +66,12 @@ namespace Broadband_Usage_Meter
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSettings frmSettings = new frmSettings();
+            showSettingsWindow();
+        }
+
+        private void showSettingsWindow()
+        {
+            FormSettings frmSettings = new FormSettings();
             frmSettings.Show();
         }
     }

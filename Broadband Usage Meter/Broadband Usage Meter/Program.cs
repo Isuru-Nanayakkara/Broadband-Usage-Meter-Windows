@@ -16,7 +16,7 @@ namespace Broadband_Usage_Meter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMeters());
+            Application.Run(new FromMeters());
         }
     }
 }

@@ -50,27 +50,27 @@
     <Compile Include="BIProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmMeters.cs">
+    <Compile Include="FromMeters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMeters.Designer.cs">
-      <DependentUpon>frmMeters.cs</DependentUpon>
+    <Compile Include="FromMeters.Designer.cs">
+      <DependentUpon>FromMeters.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSettings.cs">
+    <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <Compile Include="FormSettings.Designer.cs">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SLTAPI.cs" />
     <Compile Include="Usage.cs" />
-    <EmbeddedResource Include="frmMeters.resx">
-      <DependentUpon>frmMeters.cs</DependentUpon>
+    <EmbeddedResource Include="FromMeters.resx">
+      <DependentUpon>FromMeters.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <EmbeddedResource Include="FormSettings.resx">
+      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
